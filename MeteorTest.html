@@ -1,0 +1,54 @@
+<head>
+  <title>License</title>
+</head>
+
+<body>
+  {{> loginButtons}}
+</body>
+
+<body>
+{{#if currentUser}}
+  <div class="container">
+    <header><center>
+      <h1>Hello {{> userinfo}}, welcome to SwiftLicense:</h1>
+      <h1>A Zen approach to license management.</h1>
+      </center></header>
+	  
+    <!-- add a form below the h1 -->
+	 <!-- <form class="new-license">
+		<input type="text" name="name" placeholder="Add new license" />
+    <input type="text" name="customer" placeholder="Customer name" />
+    <input type="submit" name="Add license"/>
+	  </form>-->
+
+
+    <ul>
+      {{#each licenses}}
+        {{> license}}
+      {{/each}}
+    </ul>
+  </div>
+{{/if}}
+</body>
+
+<template name="license">
+  <li>
+    <button class="delete">&times;</button>
+    <span class="text">{{name}}</span>
+  </li>
+</template>
+
+<template name="userinfo">
+	<b>{{username}}</b>
+</template>
+
+<template name="simple">
+  {{> hello_world}}
+</template>
+
+<template name="hello_world">
+  <div class="popup">
+    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+    <h1>Hello World !</h1>
+  </div>
+</template>
